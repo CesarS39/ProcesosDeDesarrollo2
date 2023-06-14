@@ -1,0 +1,86 @@
+#include<iostream>
+#include<conio.h>
+#include<math.h>
+using namespace std;
+
+//llamada del prototipo de la funcion
+float funcion1(float a, float b);
+float funcion2(float a);
+float f3(float a, float b);
+float f4(int a, int b);
+float f5(float a, float b);
+//funcion principal
+main(){
+    char resp;
+    int op;
+    float num1,num2;
+    cout<<"1) Potencia"<<endl;
+    cout<<"2) Raiz"<<endl;
+    cout<<"3) Division"<<endl;
+    cout<<"4) Multiplicacion"<<endl;
+    cout<<"Seleccione operacion"<<endl;
+    cin>>op;
+    switch(op){
+        case 1:
+        cout<<"1er numero: ";
+        cin>>num1;
+        cout<<"2do numero: ";
+        cin>>num2;
+        cout<<"Resultado: "<<funcion1(num1,num2);
+        break;
+        case 2:
+        cout<<"Un numero: ";
+        cin>>num1;
+        cout<<"Resultado: "<<funcion2(num1);
+        break;
+        case 3:
+        cout<<"1er numero: ";
+        cin>>num1;
+        cout<<"2do numero: ";
+        cin>>num2;
+        cout<<"Resultado: "<<f3(num1,num2)<<endl;
+        cout<<"Residuo: "<<f4(num1,num2);
+        break;
+        case 4:
+        cout<<"Dos numeros: ";
+        cin>>num1>>num2;
+        cout<<"Resultado: "<<f5(num1,num2);
+        break;
+        default:
+        cout<<"No exite operacion";
+    }
+
+    getch();
+}
+//funciones
+float funcion1(float a, float b){
+    float r;
+    r=pow(a,b);
+    return r;
+}
+float funcion2(float a){
+    float r;
+    if(a>0){
+        r=sqrt(a);
+    }
+    else{
+        cout<<"No se puede sacar raiz";
+        r=0;
+    }
+    return r;
+}
+float f3(float a, float b){
+    float r;
+    r=a/b;
+    return r;
+}
+float f4(int a, int b){
+    int r;
+    r=a%b;
+    return r;
+}
+float f5(float a, float b){
+    float r;
+    r=a*b;
+    return r;
+}
